@@ -22,7 +22,7 @@ public class CarTest {
     void 자동차_이동() {
         Car car = new Car("lan");
         car.move(1);
-        assertThat(car.getLocation()).isEqualTo(1);
+        assertThat(car.getCarLocation()).isEqualTo(1);
     }
 
     @Test
