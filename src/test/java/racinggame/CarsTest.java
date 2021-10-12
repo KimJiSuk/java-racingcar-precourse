@@ -20,6 +20,6 @@ public class CarsTest {
         cars.play();
 
         System.out.println(cars.toString());
-        System.out.println(cars.getWinner());
+        System.out.println(cars.getWinners());
     }
 }

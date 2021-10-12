@@ -17,17 +17,23 @@ public class Cars {
         }
     }
 
-    public List<String> getWinner() {
+    public String getWinners() {
         int longestLocation = getLongestLocation();
-        List<String> winnerNames = new ArrayList<>();
+        StringBuilder winnerNames = new StringBuilder();
 
         for (Car car : cars) {
-            if (longestLocation == car.getCarLocation()) {
-                winnerNames.add(car.getCarName());
-            }
+            winnerNames.append(getWinner(car, longestLocation));
         }
 
-        return winnerNames;
+        return winnerNames.substring(0, winnerNames.length() - 1);
+    }
+
+    public String getWinner(Car car, int location) {
+        if (car.isLocation(location)) {
+            return car.getCarName() + SPLIT_REGEX;
+        }
+
+        return "";
     }
 
     private int getLongestLocation() {

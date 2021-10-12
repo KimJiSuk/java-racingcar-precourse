@@ -31,6 +31,10 @@ public class Car {
         return this.carLocation.getLocation();
     }
 
+    public boolean isLocation(int location) {
+        return getCarLocation() == location;
+    }
+
     @Override
     public String toString() {
         StringBuilder message = new StringBuilder(this.name.getName() + " : ");
