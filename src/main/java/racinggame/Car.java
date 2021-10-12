@@ -56,7 +56,7 @@ public class Car {
         return NOT_MOVE_DISTANCE;
     }
 
-    public void move(int distance) {
+    private void move(int distance) {
         this.carLocation = this.carLocation.move(distance);
     }
 }

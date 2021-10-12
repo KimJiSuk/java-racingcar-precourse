@@ -23,13 +23,26 @@ public class CarTest {
 
     @Test
     void 자동차_이동() {
-        car.move(1);
-        assertThat(car.getCarLocation()).isEqualTo(1);
+        car.play();
+        car.play();
+        car.play();
+        assertThat(car.getCarLocation()).isGreaterThanOrEqualTo(0).isLessThanOrEqualTo(3);
     }
 
     @Test
     void 자동차_중간_실행결과() {
-        car.move(3);
-        assertThat(car.toString()).contains("---");
+        car.play();
+        car.play();
+        car.play();
+
+        if (car.isLocation(0)) {
+            assertThat(car.toString()).contains("lan : ");
+        } else if (car.isLocation(1)) {
+            assertThat(car.toString()).isEqualTo("lan : -");
+        } else if (car.isLocation(2)) {
+            assertThat(car.toString()).isEqualTo("lan : --");
+        } else if (car.isLocation(3)) {
+            assertThat(car.toString()).isEqualTo("lan : ---");
+        }
     }
 }
