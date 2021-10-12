@@ -1,14 +1,17 @@
 package racinggame;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
 public class CarTest {
 
-    @Test
-    void 자동차_생성() {
-        new Car("lan");
+    Car car;
+
+    @BeforeEach
+    void 생성() {
+        car = new Car("lan");
     }
 
     @Test
@@ -20,14 +23,12 @@ public class CarTest {
 
     @Test
     void 자동차_이동() {
-        Car car = new Car("lan");
         car.move(1);
         assertThat(car.getCarLocation()).isEqualTo(1);
     }
 
     @Test
     void 자동차_중간_실행결과() {
-        Car car = new Car("lan");
         car.move(3);
         assertThat(car.toString()).contains("---");
     }

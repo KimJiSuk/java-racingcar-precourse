@@ -23,6 +23,10 @@ public class Car {
         move(getDistance());
     }
 
+    public String getCarName() {
+        return this.name.getName();
+    }
+
     public int getCarLocation() {
         return this.carLocation.getLocation();
     }
