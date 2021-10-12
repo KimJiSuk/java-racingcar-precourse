@@ -1,6 +1,7 @@
 package racinggame;
 
 public class RacingCar {
+    private static final String WINNERS_DELIMITER = ",";
     RacingCarView racingCarView = new RacingCarView();
     private final Cars cars;
 
@@ -39,6 +40,6 @@ public class RacingCar {
     }
 
     public void endRacing() {
-        racingCarView.printRacingWinner(cars.getWinners());
+        racingCarView.printRacingWinner(String.join(WINNERS_DELIMITER, cars.getWinners()));
     }
 }
